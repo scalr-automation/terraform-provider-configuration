@@ -1,10 +1,19 @@
 provider "aws" {
-region = var.region
+  region = "us-east-1"
 }
 resource "aws_ecr_repository" "foo" {
-name = "bar"
+  name = var.account_id
+  tags = {
+    owner = "scalr"
+  }
 }
-variable "region" {
-type = string
-default = "us-east-1"
+
+variable "account_id" {
+  type = string
+  default = "hoo_user"
+}
+
+output "ecr_arn" {
+  description = "aws ecr arn"
+  value = aws_ecr_repository.foo.arn
 }
