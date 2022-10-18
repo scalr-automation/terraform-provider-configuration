@@ -1,7 +1,17 @@
-provider "azurerm" { 
+provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "deploy" {
-  name     = "example-resources"
+  name     = var.account_id
   location = "West Europe"
+}
+
+variable "account_id" {
+  type = string
+  default = "example_account"
+}
+
+output "azure_deploy" {
+  description = "azure deploy data"
+  value = azurerm_resource_group.deploy
 }
