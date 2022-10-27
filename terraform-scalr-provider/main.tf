@@ -1,5 +1,5 @@
-provider "scalr" {
- }
+provider "scalr" {}
+
 terraform {
    required_providers {
      scalr = {
@@ -11,7 +11,10 @@ terraform {
 
 resource "scalr_environment" "test" {
   name       = "test-env"
-  account_id = "acc-svrcncgh453bi8g"
+  account_id = var.account_id
   cost_estimation_enabled = true
-  
 }
+
+variable "account_id" {
+  type = string
+  }
