@@ -10,11 +10,16 @@ terraform {
  }
 
 resource "scalr_environment" "test" {
-  name       = "test-env"
+  name       = var.env_name
   account_id = var.account_id
   cost_estimation_enabled = true
 }
 
 variable "account_id" {
   type = string
-  }
+}
+
+variable "env_name" {
+  type = string
+}
+
