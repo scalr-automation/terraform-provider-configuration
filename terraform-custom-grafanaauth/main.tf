@@ -10,7 +10,6 @@ terraform {
   
 provider "grafanaauth" {
   url = "https://scalrtest.grafana.net/"
-#token = "eyJrIjoiNVZWVEdHdW9WY253Z2FwT1plcTI5N2lEajRFak1rSkciLCJuIjoiMjIyIiwiaWQiOjF9"
 //  organization_id = 2
 }
 
