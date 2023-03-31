@@ -9,7 +9,7 @@ terraform {
 }
   
 provider "grafanaauth" {
-  url = "https://scalrtest.grafana.net/"
+  url = "https://scalrlabs.grafana.net"
 //  organization_id = 2
 }
 
