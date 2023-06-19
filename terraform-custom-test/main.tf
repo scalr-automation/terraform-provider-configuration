@@ -15,20 +15,4 @@ resource "scalr_environment" "test" {
   
 }
 
-   
-resource "scalr_variable" "example" {
-  key          = "my_key_name"
-  value        = "my_value_name"
-  category     = "shell"
-  description  = "variable description"
-  workspace_id = <WS-ID>
-}
-resource "null_resource" "env_varstimeout0123456789timeout0123456789timeot0123456789timeout01234567" {
-  count = 1
-  triggers = {
-    run_id = "12"
-  }
-  provisioner "local-exec" {
-    command = "env"
-  }
-}
+
